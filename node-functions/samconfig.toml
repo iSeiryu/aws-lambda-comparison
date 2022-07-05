@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "brightline-nodejs-stack-name"
+s3_bucket = "brightline-wt-test-bucket1"
+s3_prefix = "brightline-nodejs-stack-name"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_NAMED_IAM"
+disable_rollback = true
+image_repositories = []
