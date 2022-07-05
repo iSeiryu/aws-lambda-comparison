@@ -34,10 +34,10 @@ Resources:
           Properties:
             Path: /myhello
             Method: get
-  BrightlineFunction:
+  TodosFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: brightline_sample/
+      CodeUri: todos/
       Handler: app.lambda_handler
       Runtime: python3.9
       MemorySize: 256
@@ -45,10 +45,10 @@ Resources:
       Architectures:
         - arm64
       Events:
-        Brightline:
+        Todos:
           Type: Api
           Properties:
-            Path: /brightline
+            Path: /todos
             Method: get
   AddBookFunction:
     Type: AWS::Serverless::Function
@@ -80,12 +80,9 @@ Outputs:
   MyHelloFunction:
     Description: "My Hello Lambda Function ARN"
     Value: !GetAtt MyHelloFunction.Arn
-  BrightlineFunction:
-    Description: "Brightline Function ARN"
-    Value: !GetAtt BrightlineFunction.Arn
+  TodosFunction:
+    Description: "Todos Function ARN"
+    Value: !GetAtt TodosFunction.Arn
   AddBookFunction:
     Description: "AddBook Function ARN"
     Value: !GetAtt AddBookFunction.Arn
-  HelloWorldFunctionIamRole:
-    Description: "Implicit IAM Role created for Hello World function"
-    Value: !GetAtt HelloWorldFunctionRole.Arn

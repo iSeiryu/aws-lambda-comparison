@@ -2,9 +2,9 @@ version = 0.1
 [default]
 [default.deploy]
 [default.deploy.parameters]
-stack_name = "brightlinepythonstackname"
-s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1dtljnen1inpo"
-s3_prefix = "brightlinepythonstackname"
+stack_name = "shinypythonstackname"
+s3_bucket = "shiny-wt-test-bucket1"
+s3_prefix = "shinypythonstackname"
 region = "us-east-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
