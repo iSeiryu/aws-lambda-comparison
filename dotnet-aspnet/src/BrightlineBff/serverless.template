@@ -14,6 +14,7 @@
         "MemorySize": 256,
         "Timeout": 10,
         "Role": null,
+        "Tracing": "Active",
         "Policies": [
           "AWSLambda_FullAccess"
         ],

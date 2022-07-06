@@ -3,10 +3,10 @@
   "Transform": "AWS::Serverless-2016-10-31",
   "Description": "An AWS Serverless Application.",
   "Resources": {
-    "Get": {
+    "TodosFunction": {
       "Type": "AWS::Serverless::Function",
       "Properties": {
-        "Handler": "BrightlineBff::BrightlineBff.Functions::Get",
+        "Handler": "BrightlineBff::BrightlineBff.Todos::Get",
         "Runtime": "dotnet6",
         "CodeUri": "",
         "MemorySize": 256,
@@ -19,8 +19,31 @@
           "RootGet": {
             "Type": "Api",
             "Properties": {
-              "Path": "/",
+              "Path": "/todos",
               "Method": "GET"
+            }
+          }
+        }
+      }
+    },
+    "BooksFunction": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "BrightlineBff::BrightlineBff.Books::Add",
+        "Runtime": "dotnet6",
+        "CodeUri": "",
+        "MemorySize": 256,
+        "Timeout": 30,
+        "Role": null,
+        "Policies": [
+          "AWSLambdaBasicExecutionRole"
+        ],
+        "Events": {
+          "RootGet": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/books",
+              "Method": "POST"
             }
           }
         }

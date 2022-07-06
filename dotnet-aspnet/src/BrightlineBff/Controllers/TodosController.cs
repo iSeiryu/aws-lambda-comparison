@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BrightlineBff.Controllers; 
 
 [Route("api/[controller]")]
-public class TodosController :ControllerBase {
+public class TodosController : ControllerBase {
     static readonly HttpClient _client = new () {BaseAddress = new Uri("https://jsonplaceholder.typicode.com")};
     
     [HttpGet("{id}")]
